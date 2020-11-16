@@ -1,0 +1,289 @@
+
+body {
+
+    color: #fff !important;
+    font-size: 8pt !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    margin: 0px !important;
+    overflow-x: hidden !important;
+    text-align: center !important;
+
+}
+
+.canvas {
+  background-color: #1b242f;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+section {
+  color: #616161;
+  line-height: 11pt;
+  padding: 70px 0 70px 0;
+  position: relative;
+}
+
+section:nth-of-type(1) {
+  color: #fff;
+  height: calc(100vh + 53px);
+}
+
+section:nth-of-type(1) .highlight {
+  font-family: "Raleway-semibold";
+}
+
+.overflow-wrap {
+  overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  font-size: 16pt;
+  line-height: 20px;
+  margin: 0 0 20px 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.highlight {
+  color: #d70010;
+}
+
+.button {
+  border: 2px solid #fff;
+  box-sizing: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13pt;
+  padding: 10px 20px;
+  transition: all 0.5s;
+}
+
+nav {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: #121212;
+  border-bottom: 3px solid #000;
+  height: 50px;
+  text-align: left;
+  width: 100%;
+  z-index: 99;
+}
+
+nav .link-wrap {
+  background: #121212;
+  height: 0;
+  max-width: 1200px;
+  overflow: hidden;
+  position: absolute;
+  top: 53px;
+  transition: height 0.3s ease-out;
+  width: 100%;
+}
+
+nav .link-wrap div:first-child {
+  padding: 25px 20px 12px 20px;
+}
+
+nav .link-wrap div:hover {
+  color: #d70010;
+  background-color: transparent;
+}
+
+nav .link-wrap div {
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: color 0.5s;
+  background: none;
+  border: 0;
+}
+
+nav .active {
+  color: #d70010 !important;
+}
+
+nav .mdi-menu {
+  font-size: 30pt;
+  line-height: 36pt;
+  margin: auto 0;
+  position: absolute;
+  right: 5vw;
+  top: 0;
+}
+
+i {
+  font-style: italic;
+}
+
+.mdi {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+/* about */
+section .flex-50-gt-sm {
+  display: block;
+}
+
+.header {
+  font-size: 25pt;
+  line-height: 42px;
+  position: relative;
+}
+
+.header-bar {
+  background: #1b242f;
+  height: 5px;
+  width: 70px;
+  margin: 25px 0 100px 0;
+}
+
+section:nth-of-type(2) .skills-wrapper {
+  align-items: flex-start;
+  width: 100%;
+}
+
+section:nth-of-type(3)  .project-card {
+  height: 430px;
+  width: 40%;
+}
+
+.card-image{
+  width: 100%;
+  height: 200px;
+}
+
+.bar {
+  font-size: 7pt;
+  font-weight: 700;
+  height: 22px;
+  margin: 0 0 12px 0;
+}
+
+section:nth-of-type(2) .bars-wrap {
+  margin: 20px auto 0 auto;
+  max-width: 90%;
+  width: calc(100% - 15px);
+}
+
+section:nth-of-type(2) .bar {
+  align-items: flex-end;
+  background-color: #eee;
+  color: #666;
+  font-size: 7pt;
+  height: 22px;
+  margin: 0 0 12px 0;
+  position: relative;
+}
+
+section:nth-of-type(2) .bar.fill {
+  left: 0;
+  position: absolute;
+  top: 0;
+  background-color: #292929;
+  opacity: 1;
+  padding: 0;
+}
+
+section:nth-of-type(2) .bar .skill-name {
+  left: 0;
+  position: absolute;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  height: 100%;
+  width: 110px;
+  width: 70px;
+}
+
+/**/
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 12pt !important;
+  }
+
+  section {
+    line-height: 18pt;
+  }
+
+  section:nth-of-type(1) .text {
+    font-size: 32pt;
+    line-height: 36pt;
+  }
+  section:nth-of-type(1) .button {
+    padding: 12px 50px 12px 20px;
+    margin-bottom: 53px;
+    position: relative;
+    font-size: 16pt;
+  }
+
+  nav .link-wrap {
+    background: none;
+    height: initial;
+    overflow: visible;
+    position: initial;
+    text-align: left;
+  }
+
+  nav .link-wrap div:first-child {
+    padding: 0;
+  }
+
+  nav .link-wrap div {
+    display: inline;
+    font-size: initial;
+    margin: 0 20px;
+    padding: initial;
+  }
+
+  nav .mdi-menu {
+    display: none;
+  }
+
+  .header {
+    font-size: 30pt;
+  }
+
+  section:nth-of-type(2) .bar {
+    font-size: 11pt;
+    height: 28px;
+    margin: 0 0 15px 0;
+  }
+
+  section:nth-of-type(2) .bar .skill-name {
+    width: 110px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .flex-50-gt-sm {
+    box-sizing: border-box;
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    max-height: 100%;
+    max-width: 50%;
+  }
+
+  .flex.row-gt-sm {
+    flex-direction: row;
+  }
+}

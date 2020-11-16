@@ -1,0 +1,26 @@
+
+section#about
+    div.container.flex
+        
+        div.header
+            |About
+        div.header-bar
+        div.skills-wrapper.flex.row-gt-sm
+            div.slide-in-left.flex.flex-50-gt-sm
+                img.me(src="", alt="")
+                div.about-summary
+                    | #{about_summary}
+                    
+            div.slide-in-right.bars-wrap.flex.flex-50-gt-sm 
+                div.bar.flex
+                    div.bar.fill(style="width:100%")
+                        div.skill-name.flex
+                            | Django
+                div.bar.flex
+                    div.bar.fill(style="width:100%")
+                        div.skill-name.flex
+                            | Python
+                div.bar.flex
+                    div.bar.fill(style="width:100%")
+                        div.skill-name.flex
+                            | Node.js

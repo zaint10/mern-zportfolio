@@ -1,0 +1,46 @@
+extends ./layouts/base.jade
+
+block css
+    
+    link(type='text/css' rel='stylesheet' href='/css/dashboard.css')
+    link(type='text/css' rel='stylesheet' href='/css/tagsinput.css')
+    title Portfolio | Dashboard
+
+block body
+    
+    form.form(action='/api/v1/user' method='post' id='#{user._id}')
+      input(name='_id' value='#{user._id}' type='hidden')
+      each val, key in user
+        
+        if (key != "_id" && key != "__v" && key != "username" && key != "password"  && key != "skills" && key != "projects" && key != "roles")
+            p.field.required
+                if (key === "about_summary")
+                    label.label(for='name') #{key}
+                    textarea.textarea(cols='50' id='#{key}' name='#{key}' rows='4') #{val}
+                else
+                    label.label(for='name') #{key}
+                    input.text-input(id='#{key}' name='#{key}' type='text' value='#{val}')
+                
+      .field
+        label.label Technology and Skills
+        input#ts-1.text-input.skill-tags.d-none(name='skills' value='#{user.skills}' placeholder='Add Skills' data-role='tagsinput')
+      .field.project-area
+        label.label Projects?
+        .d-none
+          input#projects-to-delete(name='deleteProjects' value='' type='hidden')
+        ul.main-projects-wrapper
+        div
+          button#btn-add-project.btn.btn-primary.content-right
+            i.fa.fa-plus.fa-lg.plus-icon
+              | Add New Project
+              span.processing-dots.d-none ...
+      p.field.half
+        input.button(type='submit' value='Update')
+block js
+    script(src='/js/tagsinput.js')
+    script(src='/js/dashboard.js' type="module")
+    
+    script(type='text/javascript').
+      const user = !{JSON.stringify(user)};  
+      
+      

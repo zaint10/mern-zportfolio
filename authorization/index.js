@@ -1,0 +1,45 @@
+const { RoleActions } = require("../models/rbac");
+const roleActions = require("../models/rbac/roleActions");
+const roles = require("../models/rbac/roles");
+console.log(RoleActions);
+
+const hasPermissions = async (user, module, permission) => {
+	return await RoleActions.find(
+		{
+			role: { $in: user.roles.map((role) => role.name) },
+			module: module,
+			action: permission,
+        }
+        ).then(res => {
+            if(res){
+                console.log('User has permission.')
+            }else{
+                console.log('User does not have permission.')
+            }
+            return !!res
+        }).catch(err => {
+            console.log(err)
+            return false
+        })
+
+	// user.roles.forEach(role => {
+
+	//     RoleActions.find(
+	//         {
+	//             role: {$in : user.roles.map(role => role.name)},
+	//             module: module,
+	//             action: permission
+	//         }, (err, res) => {
+	//             if(err){
+	//                 return false
+	//             }
+	//             console.log('Permission exists')
+	//            return true
+	//         }
+	//     )
+	// });
+};
+
+module.exports = {
+	hasPermissions,
+};

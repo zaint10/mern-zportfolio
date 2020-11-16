@@ -1,0 +1,18 @@
+section#home
+    div.canvas
+        canvas#canvas(height='644')
+    div.flex
+        div.text
+            | Hello I'm 
+            span.text-capitalize.highlight #{fname} #{lname}.
+            br
+            | I'm a 
+            span.text-capitalize| #{position_title}
+        nav.flex
+            div.link-wrap
+                .page-link.active(dest='home') home
+                .page-link(dest='home') about
+                .page-link(dest='home') portfolio
+                .page-link(dest='home') contact
+            i.mdi.mdi-menu.fa.fa-bars
+                

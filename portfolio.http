@@ -1,0 +1,13 @@
+POST http://localhost:8000/service/upload/request_upload_url/image/ HTTP/1.1
+content-type: application/json
+
+{
+    "filename": "testname",
+    "filetype": "image/jpeg"
+}
+
+###
+GET http://localhost:8000/account/login/WolvezineX0
+
+###
+POST http://localhost:8000/account/login/WolvezineX0
