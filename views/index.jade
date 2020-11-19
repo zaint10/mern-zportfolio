@@ -1,21 +1,23 @@
 
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(type="text/css" rel='stylesheet' href='css/style.css')
-        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
-        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
-       
-        title Zain | Portfolio
-    body
-        div.overflow-wrap
-            include partials/home.jade
-            include partials/about.jade
-            include partials/projects.jade
+extends ./layouts/base.jade
+block css
+    link(type="text/css" rel='stylesheet' href='css/style.css')
+    title Zain | Portfolio
 
-        script(src="js/canvas.js")              
+block body
+    div.overflow-wrap
+        include partials/home.jade
+        include partials/about.jade
+        include partials/projects.jade
+        include partials/contactme.jade
+        include partials/footer.jade
 
+block js
+    script(src="js/canvas.js")
+    script(src="js/portfolio.js" type="module")     
+    script(type='text/javascript').
+        const user = !{JSON.stringify(user)};
+        const projects = !{JSON.stringify(projects)};
+        
 
 

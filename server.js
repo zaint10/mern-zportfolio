@@ -48,7 +48,7 @@ const MongoDB = new Database.mongoDB(process.env.DB_CONNECTION_URI).connect();
 // Defining Main Router
 const express = require("express");
 const app = express();
-
+app.locals.split = function(string){ return string.split(',') }
 // Set app Views And Static Folder
 app.set("views", `${path.join(root, config.views)}`);
 app.use(express.static(publicDirectoryPath));

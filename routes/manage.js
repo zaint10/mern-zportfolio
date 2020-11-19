@@ -1,8 +1,13 @@
-const { RbacConroller, UserController, ProjectController } = require("../controllers");
 const {
-	sessionChecker,
+	UserController,
+	ProjectController,
+	ProjectCategoriesController,
+} = require("../controllers");
+
+const {
 	pswdAuthenticateSessionChecker,
 } = require("../middlewares/SessionMiddleware");
+
 const { hasPermissions } = require("../authorization");
 const express = require("express");
 const router = express();
@@ -10,7 +15,9 @@ const router = express();
 router.get("/", async (req, res) => {
 	res.send("Manage RBAC");
 	const USERNAME = process.env.USER_NAME;
-	await ProjectController.createDefaultCategory();
+	await ProjectController.createCategory("MERN");
+	await ProjectController.createCategory("Python/Desktop Apps");
+	await ProjectController.createCategory("Android/Java");
 
 	// RbacConroller.createUserRoles(req.session.user._id, [
 	// 	"BASIC_USER",
@@ -23,8 +30,6 @@ router.get("/", async (req, res) => {
 	// 		console.log(err);
 	// 	});
 });
-
-router.get("/users", (req, res) => {});
 
 router.get(
 	"/users/:username",
@@ -48,35 +53,23 @@ router.get(
 			.then(async (docUser) => {
 				if (docUser) {
 					user = await UserController.getPopulateProjects(docUser._id);
-					console.log(user)
-					// return res.status(200).render("dashboard.hbs", { user: user });
-					return res.status(200).render("dashboard.jade", { user: user });
+					const projectcategories = await ProjectCategoriesController.getAllCategories();
+
+					return res
+						.status(200)
+						.render("dashboard.jade", {
+							user: user,
+							categories: projectcategories,
+						});
 				}
 
 				res.status(404).send("No such username exist.");
 			})
 			.catch((err) => {
+				console.log(err);
 				res.status(400);
 			});
 	}
 );
-
-router.get("/rbac", (req, res) => {
-	res.send("Manage RBAC");
-	const USERNAME = process.env.USER_NAME;
-	UserController.createUserWUsernameAndPassword("USERNAME", "zeestack10")
-		.then((result) => {
-			console.log(result);
-		})
-		.catch((err) => {
-			console.log(err);
-		});
-
-	// RbacConroller.createRoles([{name: 'test'}]).then(result => {
-	//     console.log(result)
-	// }).catch(err => {
-	//     console.log(err)
-	// })
-});
 
 module.exports = router;

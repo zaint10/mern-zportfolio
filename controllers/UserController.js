@@ -4,28 +4,6 @@ const models = require("../models");
 class UserController {
 	constructor() {}
 
-	getById(req, res) {
-		const id = req.params.id;
-		return new Promise((resolve, reject) => {
-			console.log("Getting user details, id: " + id);
-			models.Users.findById(id)
-				.then((user) => {
-					if (user) {
-						resolve(user);
-					}
-
-					reject(
-						new Error(
-							"Something Went Wrong. User is not logged in or Id does not exists"
-						)
-					);
-				})
-				.catch((err) => {
-					reject(err);
-				});
-		});
-	}
-
 	getByUsername(username) {
 		console.log('Getting user by username: ' + username )
 		return new Promise((resolve, reject) =>{
@@ -56,6 +34,7 @@ class UserController {
 		})
 		
 	}
+
 	updateUser(userId, user) {
 		models.Users.findByIdAndUpdate(userId, {
 			fname: user.fname,
@@ -114,5 +93,6 @@ class UserController {
 		return models.Users.findById(userId).populate("projects").lean();
 	}
 }
+
 
 module.exports = new UserController();

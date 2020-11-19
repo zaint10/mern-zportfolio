@@ -66,4 +66,18 @@ router.post("/create-project-image/:projectId", async(req, res) => {
 	}
 
 })
+
+router.put("/project-category/:projectid", async(req, res) => {
+	const {projectid} = req.params;
+	const {category} = req.body
+	if(projectid && category){
+		await Controller.ProjectController.updateProjectCategory([projectid], category);
+		return res.status(200).send({success: true, message: 'Project category is updated.'});
+	}
+	
+	return res.status(403)
+
+
+
+})
 module.exports = router;

@@ -11,7 +11,6 @@ router.get('/', sessionChecker, pswdAuthenticateSessionChecker, async (req, res)
         res.send('You are not authorized to View Users Dashboard.')
     }else{
         const user = await Controller.UserController.getPopulateProjects(req.session.user._id)
-
         res.render('dashboard.hbs', {user: user})
     }
     

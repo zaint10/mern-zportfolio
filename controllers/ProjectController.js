@@ -16,7 +16,7 @@ const findProjectById = (projectId) => {
 const createProject = (project) => {
 	return models.Projects.create(project)
 		.then((docProject) => {
-			console.log(`\nProjects are created.\n`);
+			console.log(`Projects are created.`);
 			updateProjectCategory(docProject.map((project) => project._id))
 			
 			return docProject;
@@ -85,7 +85,8 @@ const updateProjectCategory = (projectids, category_name='Others') => {
 	
 }
 
-const createDefaultCategory = async (def='Others') => {
+const createCategory = async (def='Others') => {
+	
 	return await new Promise((resolve, reject) => {
 		models.ProjectCatagories.create({
 			name: def
@@ -109,5 +110,6 @@ module.exports = {
 	updateProject,
 	updateProjects,
 	deleteProject,
-	createDefaultCategory
+	createCategory,
+	updateProjectCategory
 };

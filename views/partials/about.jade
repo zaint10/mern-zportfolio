@@ -9,18 +9,12 @@ section#about
             div.slide-in-left.flex.flex-50-gt-sm
                 img.me(src="", alt="")
                 div.about-summary
-                    | #{about_summary}
+                    | #{user.about_summary}
                     
-            div.slide-in-right.bars-wrap.flex.flex-50-gt-sm 
-                div.bar.flex
-                    div.bar.fill(style="width:100%")
+            div.slide-in-right.boxes-wrap.flex-50-gt-sm.flex
+                each skill in split(user.skills)
+                    div.box.flex
                         div.skill-name.flex
-                            | Django
-                div.bar.flex
-                    div.bar.fill(style="width:100%")
-                        div.skill-name.flex
-                            | Python
-                div.bar.flex
-                    div.bar.fill(style="width:100%")
-                        div.skill-name.flex
-                            | Node.js
+                            | #{skill}
+                
+               
