@@ -33,3 +33,12 @@ Sat, 20 Feb 2021 19:49:59 GMT | INFO | portfolio_apis.log | Projects are created
 Sat, 20 Feb 2021 19:49:59 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
 Sat, 20 Feb 2021 19:50:09 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603167e62f9c3805c89758c7 | 
 Sat, 20 Feb 2021 19:50:10 GMT | INFO | portfolio_apis.log | Project Ref: 603167e62f9c3805c89758c7 deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 20:33:55 GMT | INFO | portfolio_apis.log | Updating User's potfolio details. | 
+Sat, 20 Feb 2021 20:33:55 GMT | INFO | portfolio_apis.log | User's projects details are updated. | 
+Sat, 20 Feb 2021 20:33:56 GMT | INFO | portfolio_apis.log | Details are updated. user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 20:38:30 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:40:23 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:40:24 GMT | INFO | portfolio_apis.log | Image metadata is updated: 603173b79944e60a9497f068 | 
+Sat, 20 Feb 2021 20:40:24 GMT | INFO | portfolio_apis.log | Image is added in project. | 
+Sat, 20 Feb 2021 20:42:20 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:42:21 GMT | INFO | portfolio_apis.log | TypeError: Cannot read property '_id' of null | 

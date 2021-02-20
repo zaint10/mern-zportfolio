@@ -101,7 +101,7 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 		if (docProject.image) {
 			// Store old key before updating imagemetadata. This will be used to delete object from bucket.
 			const oldKey = docProject.image.key;
-			newImage = await Controller.ImageMetadataController.updateImageMetadata(
+			newImage = Controller.ImageMetadataController.updateImageMetadata(
 				docProject.image._id,
 				filename,
 				filetype,
@@ -109,17 +109,17 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 				fileurl
 			);
 		} else {
-			newImage = await Controller.ImageMetadataController.createImageMetaData(
+			newImage = Controller.ImageMetadataController.createImageMetaData(
 				filename,
 				filetype,
 				key,
 				fileurl
 			);
 		}
-		return newImage
+		return await newImage
 			.then((docImage) => {
 				Logger.info(`Image metadata is updated: ${docImage._id}`);
-				docProject.image = newImage;
+				docProject.image = docImage;
 				docProject.save();
 				Logger.info("Image is added in project.");
 				return res.status(200).send({
@@ -130,7 +130,7 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 				});
 			})
 			.catch((err) => {
-				Logger.info(err);
+				Logger.error(err);
 			});
 	} else {
 		res.status(404).send({
