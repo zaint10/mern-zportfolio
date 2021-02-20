@@ -4,10 +4,10 @@ section#home
     div.flex
         div.text
             | Hello I'm 
-            span.text-capitalize.highlight #{fname} #{lname}.
+            span.text-capitalize.highlight #{user.fname} #{user.lname}.
             br
             | I'm a 
-            span.text-capitalize| #{position_title}
+            span.text-capitalize| #{user.position_title}
         nav.flex
             div.link-wrap
                 .page-link.active(dest='home') home

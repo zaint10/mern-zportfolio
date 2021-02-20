@@ -11,7 +11,6 @@ const router = express.Router();
 
 router.get("/request_upload_url/:filetypeName/", async (req, res) => {
 	const user  = req.session.user;
-	console.log(user)
 	if (user) {
 		const isAuthorized = await hasPermissions(user, "FILE", "upload");
 		if (isAuthorized) {
@@ -22,7 +21,6 @@ router.get("/request_upload_url/:filetypeName/", async (req, res) => {
 			const key = utilities.makeS3Key(user.username, filename, filetypeName).get()
 			const response = await getSignedUrl(filetype, key);
             response['key'] = key
-            console.log(response)
 			return res.status(200).send(response);
 		} else {
             res.status(401).send({ success: false, message: "You are not authorized to request for upload url from AWS S3." });

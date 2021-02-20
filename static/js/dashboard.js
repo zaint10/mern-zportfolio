@@ -7,6 +7,7 @@ $(document).ready(function () {
 	$(".bootstrap-tagsinput input").attr("name", "");
 
 	console.log(user);
+	console.log(categories);
 	addProjects(user.projects);
 	
 
@@ -110,6 +111,36 @@ $(document).ready(function () {
 			alert("The server says: " + response);
 		},
 	});
+	
+	$('.dropdown button').on('click', function (event) {
+		$(this).next('.dropdown-menu').toggleClass('show')
+		// $(this).toggleClass('show');
+	})
+	$('body').on('click', function (e) {
+		if (!$('.dropdown').is(e.target) 
+			&& $('.dropdown').has(e.target).length === 0 
+			&& $('.open').has(e.target).length === 0
+		) {
+			$('.dropdown .dropdown-menu').removeClass('show')
+		}
+	});
+	
+	$(document).on('click', '.dropdown [aria-labelledby="dropdownSelectCategorytogleButton"] .dropdown-item', async function(e) {
+		const isSelected = $(this).hasClass('selected');
+		if(isSelected){
+			return false;
+		}
+		const projectid = $(this).closest('.project-wrap').find('.pid').val();
+		const category_name = $.trim($(this).text())
+		await updateProjectCategory(projectid, category_name)
+		.then(resp => {
+			if(resp.success){
+				$(this).closest('.dropdown-menu').find('.dropdown-item').removeClass('selected');
+				$(this).addClass('selected');
+			}
+		})
+		
+	})
 });
 
 function showProjectLiveField($parent) {
@@ -123,7 +154,7 @@ function hideProjectLiveField($parent) {
 }
 
 function addProject(project) {
-	console.log('Adding project to DOM.')
+	
 	let currIndex = $(".project-wrap").length;
 	const currCount = currIndex + 1;
 	const keyname = "projects";
@@ -150,7 +181,24 @@ function addProject(project) {
                                     <option value='completed'>Completed</option>
                                     <option value='in developement'>In Developement</option>
                                     <option value='live'>Live</option>
-                                </select>
+								</select>
+								<div class="dropdown">
+									<button id="dropdownSelectCategorytogleButton" class="btn dropdown-toggle" type='button' aria-haspopup='true' aria-expanded='false'>
+										Select Project Cateogry
+									</button>
+									<div class="dropdown-menu " aria-labelledby='dropdownSelectCategorytogleButton'>
+										<h6 class="dropdown-header">Choose categories to assign</h6>
+										${
+											categories.map(cat => {
+												return `<button class='dropdown-item ${project.category.name == cat.name ? "selected" : ""}' type="button">
+													${cat.name}
+												</button>`
+											}).join('\n')
+										}
+										
+									</div>
+								</div>
+          
                                 <input class='text-input project-live-link d-none' name='${keyname}[${currIndex}][live_link]' type="url" value='${project.live_link}' placeholder="Live Project Link">
 								<input type="file" name="img[]" class="file"  accept=".jpg,.jpeg,.png" >
 									<div class="input-group col-xs-12 image-wrapper">
@@ -168,6 +216,7 @@ function addProject(project) {
 	$(".main-projects-wrapper").fadeIn("slow", function () {
 		$(this).append(projectMarkup);
 		$(this).find(".project-wrap:last .project-status").val(project.status);
+		
 		if (keyname == "projects") {
 			$(this)
 				.find(".project-wrap:last")
@@ -236,9 +285,31 @@ function addProjectImage(projectId, filename, filetype, key){
 	
 			},
 			error: (resp) => {
-				console.log(resp)
+				
 			}
 		})
 	}
 	
+}
+
+async function updateProjectCategory(projectid, category){
+	return new Promise((resolve, reject) => {
+		$.ajax({
+			url: `/api/v1/project-category/${projectid}`,
+			method: 'PUT',
+			data: {
+				category: category
+			},
+			success: (resp) => {
+				resolve(resp)
+			},
+			error: () => {
+				reject()
+			},
+			complete: () => {
+	
+			}
+	
+		})
+	}) 
 }

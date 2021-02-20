@@ -29,10 +29,10 @@ hbs.registerHelper({
 require('dotenv').config()
 
 // Import routes
-const page = require(path.join(root, "./routes/page"));
-const login = require(path.join(root, "./routes/login"));
-const manage = require(path.join(root, "./routes/manage"));
-const dashboardApi = require(path.join(root, "./routes/api"));
+const home_page = require(path.join(root, "./routes/home-page"));
+const accountApis = require(path.join(root, "./routes/accounts/"));
+const manage_portfolio = require(path.join(root, "./routes/manage_portfolio"));
+const portfolioApis = require(path.join(root, "./routes/api"));
 const fileUploadApi = require(path.join(root, "./routes/file-upload"));
 
 // Import config and enviroment
@@ -48,7 +48,7 @@ const MongoDB = new Database.mongoDB(process.env.DB_CONNECTION_URI).connect();
 // Defining Main Router
 const express = require("express");
 const app = express();
-
+app.locals.split = function(string){ return string.split(',') }
 // Set app Views And Static Folder
 app.set("views", `${path.join(root, config.views)}`);
 app.use(express.static(publicDirectoryPath));
@@ -85,10 +85,11 @@ app.use(
 );
 
 // Set routes
-app.use("/", page);
-app.use("/account", login);
-app.use("/manage", manage);
-app.use("/api/v1", dashboardApi);
+app.use("/", home_page);
+
+app.use("/account", accountApis);
+app.use("/manage_portfolio", manage_portfolio);
+app.use("/api/v1", portfolioApis);
 app.use("/service/upload", fileUploadApi);
 
 

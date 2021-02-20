@@ -4,5 +4,15 @@ section#project
         div.header
             | Projects
         div.header-bar
-        div.project-card-wrapper
+        .tab-wrapper
+            ul.tabs
+                li.tab-link.active(data-tab="0")
+                    |All
+                -var index = 1
+                each projectsArr, category in projects
+                    li.tab-link(data-tab="#{index++}")
+                        |#{category}
+        .content-wrapper
             include project-card.jade
+
+                    

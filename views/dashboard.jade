@@ -28,6 +28,27 @@ block body
         label.label Projects?
         .d-none
           input#projects-to-delete(name='deleteProjects' value='' type='hidden')
+        
+        .dropdown
+          button#dropdownAllCategoryMenuButton.btn.dropdown-toggle(type='button' aria-haspopup='true' aria-expanded='false')
+            | Show All Categories
+          .dropdown-menu(aria-labelledby='dropdownAllCategoryMenuButton')
+            h6.dropdown-header Categories
+            each cat in categories
+              span.dropdown-item() #{cat.name}
+            .dropdown-divider
+            .dropdown.submenu
+                button#dropdownAddCategory.btn.dropdown-item.dropdown-toggle(type='button'   aria-haspopup='true' aria-expanded='false')
+                  | Add Category
+                .dropdown-menu(aria-labelledby='dropdownAddCategory')
+                  input.dropdown-item(placeholder="Type Category Name..")
+                  .menu-actions.d-flex.justify-content-center
+                    button.dropdown-item.button.add-category(type='button') Create
+                      i.fa.fa-plus
+              //- div.d-flex.justify-content-center.menu-actions
+              //-   button.button.menu-subbutton.dropdown-item.add-category(type='button') Add
+              //-     i.fa.fa-plus
+
         ul.main-projects-wrapper
         div
           button#btn-add-project.btn.btn-primary.content-right
@@ -42,5 +63,5 @@ block js
     
     script(type='text/javascript').
       const user = !{JSON.stringify(user)};  
-      
+      const categories = !{JSON.stringify(categories)}
       

@@ -12,7 +12,7 @@ class DBConnection{
         mongoose
           .connect(this.DB_CONNECTION_STRING, { useNewUrlParser: true,  useUnifiedTopology: true })
           .then((response) => {
-            console.log("MongoDB is connected"); 
+            console.log("Mongo DB is connected"); 
           })
           .catch((err) => {
             console.log("MongoDB Connection Error");

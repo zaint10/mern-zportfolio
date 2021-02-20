@@ -1,0 +1,18 @@
+section#contact
+    svg.svgcolor-light(preserveAspectRatio='none' viewBox='0 0 100 102' height='75' width='100%' version='1.1' xmlns='http://www.w3.org/2000/svg')
+        path(d='M0 0 L50 100 L100 0 Z' fill='white' stroke='white')
+
+    div.container.flex
+        
+        div.header
+            |Contact Me
+        div.header-bar
+        form#contact-form.waypoint.animated.pop-in(data-animation='pop-in' data-delay='.5s' style='animation-delay: 0.5s;')
+            input(placeholder='Name' type='text' name='name' required='')
+            input(placeholder='Enter email' type='email' name='email' required='')
+            textarea(placeholder='Your Message' type='text' name='message')
+            #success
+                div
+                | Your message was sent successfully. Thanks!
+                span#close.mdi.mdi-close
+            input#submit.button(type='submit' value='SUBMIT')
