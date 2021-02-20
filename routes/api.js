@@ -44,16 +44,21 @@ router.post("/projects", async (req, res) => {
 	if (projects) {
 		createdProjects = await Controller.ProjectController.createProjects(
 			projects
-		);
+		).catch((err) => {
+			Logger.error(err);
+			return res.status(400).send({ message: "Somethjing Went Wrong." });
+		});
+		
 		Logger.info(`Projects are created. Assigning projects to user: ${userId}`);
 		await Controller.UserController.addProjects(userId, createdProjects)
-			.then(() => {
+			.then(async () => {
 				Logger.info(`Projects are assigned.`);
+				createdProjects = await Controller.ProjectController.findProjectByIds(createdProjects)
 				res.status(200).send({ projects: createdProjects });
 			})
 			.catch((err) => {
 				Logger.error(err);
-				res.status(400).send({ projects: createdProjects });
+				res.status(400).send({ message: 'Something went wrong.' });
 			});
 	}
 });
@@ -141,7 +146,7 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 });
 
 router.put("/project-category/:projectid", async (req, res) => {
-	Logger.info('Assigning a category to project.')
+	Logger.info("Assigning a category to project.");
 	const { projectid } = req.params;
 	const { category } = req.body;
 	if (projectid && category) {

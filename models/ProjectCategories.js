@@ -6,8 +6,7 @@ const Schema = mongoose.Schema;
 const projectCategorySchema = new Schema({
     name: {
         type: String,
-        unique: true,
-        sparse: true
+        default: 'Others'
     },
     
 

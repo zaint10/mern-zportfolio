@@ -11,8 +11,8 @@ const projectSchema = new Schema({
 	status: String,
 	live_link: String,
 	category: {
-        type: projectCategorySchema,
-        default: null
+		type: projectCategorySchema,
+		default: null
 	},
 	image: {
 		type: imageSchema,

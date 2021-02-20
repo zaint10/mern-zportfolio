@@ -80,8 +80,8 @@ class UserController {
 
 	addProjects(userId, projects) {
 		return new Promise((resolve, reject) => {
-			projects.forEach((docProject) => {
-				this.addProject(userId, docProject).catch((err) => {
+			projects.forEach((project) => {
+				this.addProject(userId, project).catch((err) => {
 					reject(err);
 				});
 			});
