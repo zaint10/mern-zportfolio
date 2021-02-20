@@ -285,7 +285,7 @@ function addProjectImage(projectId, filename, filetype, key){
 	
 			},
 			error: (resp) => {
-				console.log(resp)
+				
 			}
 		})
 	}

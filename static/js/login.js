@@ -15,8 +15,7 @@ $(document).ready(function () {
             }
         },
         error: function(resp){
-            console.log(resp)
-            alert("Error: " );
+            alert("Error: ");
         }
     });
 });

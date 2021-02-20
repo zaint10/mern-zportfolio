@@ -1,3 +1,4 @@
+const Logger = require("./logger");
 const uuid = require('uuid').v4
 const _ = require('lodash')
 
@@ -22,5 +23,6 @@ const getCategorizedProjects = (projects) => {
 module.exports = {
     makeS3Key,
     S3_BASE_URL,
-    getCategorizedProjects
+    getCategorizedProjects,
+    Logger
 }

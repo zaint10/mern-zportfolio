@@ -1,3 +1,4 @@
+
 const {
 	UserController,
 	ProjectController,
@@ -10,24 +11,29 @@ const {
 
 const { hasPermissions } = require("../authorization");
 const express = require("express");
+let {Logger} = require("../utilities");
+
 const router = express();
+Logger = new Logger();
+Logger.setLogName('manage_portfolio');
+Logger.init();
 
 router.get("/", async (req, res) => {
 	res.send("Manage RBAC");
 	const USERNAME = process.env.USER_NAME;
-	await ProjectController.createCategory("MERN");
-	await ProjectController.createCategory("Python/Desktop Apps");
-	await ProjectController.createCategory("Android/Java");
+	// await ProjectController.createCategory("MERN");
+	// await ProjectController.createCategory("Python/Desktop Apps");
+	// await ProjectController.createCategory("Android/Java");
 
 	// RbacConroller.createUserRoles(req.session.user._id, [
 	// 	"BASIC_USER",
 	// 	"SUPER_USER",
 	// ])
 	// 	.then((result) => {
-	// 		console.log(result);
+	// 		
 	// 	})
 	// 	.catch((err) => {
-	// 		console.log(err);
+	// 		
 	// 	});
 });
 
@@ -55,18 +61,16 @@ router.get(
 					user = await UserController.getPopulateProjects(docUser._id);
 					const projectcategories = await ProjectCategoriesController.getAllCategories();
 
-					return res
-						.status(200)
-						.render("dashboard.jade", {
-							user: user,
-							categories: projectcategories,
-						});
+					return res.status(200).render("dashboard.jade", {
+						user: user,
+						categories: projectcategories,
+					});
 				}
 
 				res.status(404).send("No such username exist.");
 			})
 			.catch((err) => {
-				console.log(err);
+				Logger.error(err);
 				res.status(400);
 			});
 	}

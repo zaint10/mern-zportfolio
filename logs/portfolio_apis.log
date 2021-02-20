@@ -1,0 +1,35 @@
+Sat, 20 Feb 2021 18:48:30 GMT | INFO | portfolio_apis.log | Updating User's potfolio details. | 
+Sat, 20 Feb 2021 18:49:02 GMT | INFO | portfolio_apis.log | Details are updated. user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:00:51 GMT | INFO | portfolio_apis.log | Updating User's potfolio details. | 
+Sat, 20 Feb 2021 19:01:19 GMT | INFO | portfolio_apis.log | User's projects details are updated. | 
+Sat, 20 Feb 2021 19:01:33 GMT | INFO | portfolio_apis.log | Details are updated. user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:27:05 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:27:50 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:27:51 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:27:51 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:37:08 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603162b6d3c4ba19149bc81c | 
+Sat, 20 Feb 2021 19:38:14 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:38:15 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:38:15 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:38:44 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60316526597a7b303089a104 | 
+Sat, 20 Feb 2021 19:38:44 GMT | ERROR | portfolio_apis.log | Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client | 
+Sat, 20 Feb 2021 19:40:52 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:40:53 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:40:53 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:41:01 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603165c4daab800970e4c614 | 
+Sat, 20 Feb 2021 19:41:01 GMT | INFO | portfolio_apis.log | Project Ref: 603165c4daab800970e4c614 deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:45:25 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:45:26 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:45:26 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:45:36 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603166d5ccf1f13750f2ff2b | 
+Sat, 20 Feb 2021 19:45:36 GMT | INFO | portfolio_apis.log | Project Ref: 603166d5ccf1f13750f2ff2b deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:47:33 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:47:34 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:47:34 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:47:42 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60316755eab3c7106c80cf2b | 
+Sat, 20 Feb 2021 19:47:42 GMT | INFO | portfolio_apis.log | Project Ref: 60316755eab3c7106c80cf2b deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:49:58 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:49:59 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:49:59 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:50:09 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603167e62f9c3805c89758c7 | 
+Sat, 20 Feb 2021 19:50:10 GMT | INFO | portfolio_apis.log | Project Ref: 603167e62f9c3805c89758c7 deleted from User: 5fac284c5cc89d49acc53732 | 

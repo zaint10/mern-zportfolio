@@ -18,7 +18,6 @@ export function imageProview(file, $previewImage) {
 	const reader = new FileReader();
 
 	reader.addEventListener("load", function () {
-		console.log(this);
 		$previewImage.prop("src", this.result);
 	});
 
@@ -55,7 +54,6 @@ export async function upload(url, contentype, file) {
 				resolve(resp)
 			},
 			error: (resp)=> {
-				console.log(resp)
 			}
 		});
 	})

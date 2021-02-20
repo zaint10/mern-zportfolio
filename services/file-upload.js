@@ -37,7 +37,7 @@ const getSignedUrl = async (filetype, key) => {
 			});
 		});
 	} catch (err) {
-		console.log(err);
+		throw new Error(err);
 	}
 };
 

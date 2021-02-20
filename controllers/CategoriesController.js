@@ -9,7 +9,6 @@ const getAllCategories = () => {
         .then(docCategories => {
             resolve(docCategories)
         }).catch(err => {
-            console.log(err)
             reject(err)
         })
 
