@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "debug": "nodemon --inspect server.js"
+    "start": "node server.js",
+    "debug": "nodemon --inspect server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "author": "",
   "license": "ISC",
@@ -31,5 +32,8 @@
     "uuid": "^8.3.1",
     "winston": "^3.3.3"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "engines": {
+    "node": "12.19.0"
+  }
 }
