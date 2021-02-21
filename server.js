@@ -78,18 +78,18 @@ app.use(
     cookie: {
       maxAge: SESS_LIFETIME,
       sameSite: true,
-      secure: false
+      secure: true
     }
     
   })
 );
-app.get('*',function(req,res,next){
-  if(req.protocol == 'https'){
-    res.redirect(`https://${req.header('host')}${req.url}`)
-  }else{
-    next()
-  }
-})
+// app.get('*',function(req,res,next){
+//   if(req.protocol == 'https'){
+//     res.redirect(`https://${req.header('host')}${req.url}`)
+//   }else{
+//     next()
+//   }
+// })
 var sslRedirect = require('heroku-ssl-redirect');
 // app.use(sslRedirect());
 // Set routes
