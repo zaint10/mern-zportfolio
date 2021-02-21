@@ -14,7 +14,7 @@ const sessionChecker = (req, res, next) => {
 	} else {
 		Logger.info("Invalid Session, Redirecting to authenticate")
 		const url = new URL('https://' + req.get('host') + req.originalUrl)
-		res.redirect("/account/login/" + process.env.USER_NAME + "?next=" + url);
+		res.redirect("/account/login/" + process.env.USER_NAME + "?next=" + req.originalUrl);
 	}
 };
 
