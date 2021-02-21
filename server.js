@@ -84,7 +84,7 @@ app.use(
   })
 );
 var sslRedirect = require('heroku-ssl-redirect');
-app.use(sslRedirect());
+// app.use(sslRedirect());
 // Set routes
 app.use("/", home_page);
 
