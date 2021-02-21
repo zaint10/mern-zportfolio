@@ -1,6 +1,7 @@
 const Controller = require("../controllers");
 const utilities = require("../utilities");
 const express = require("express");
+const sendEmail = require("../services/send-email");
 let { Logger } = require("../utilities");
 
 const router = express.Router();
@@ -48,17 +49,19 @@ router.post("/projects", async (req, res) => {
 			Logger.error(err);
 			return res.status(400).send({ message: "Somethjing Went Wrong." });
 		});
-		
+
 		Logger.info(`Projects are created. Assigning projects to user: ${userId}`);
 		await Controller.UserController.addProjects(userId, createdProjects)
 			.then(async () => {
 				Logger.info(`Projects are assigned.`);
-				createdProjects = await Controller.ProjectController.findProjectByIds(createdProjects)
+				createdProjects = await Controller.ProjectController.findProjectByIds(
+					createdProjects
+				);
 				res.status(200).send({ projects: createdProjects });
 			})
 			.catch((err) => {
 				Logger.error(err);
-				res.status(400).send({ message: 'Something went wrong.' });
+				res.status(400).send({ message: "Something went wrong." });
 			});
 	}
 });
@@ -160,5 +163,18 @@ router.put("/project-category/:projectid", async (req, res) => {
 	}
 
 	return res.status(403);
+});
+
+router.post("/contact-me", async (req, res) => {
+	const fromObj = req.body.from;
+	sendEmail(fromObj)
+		.then(() => {
+			res.status(200).send({ message: "Email is sent." });
+		})
+		.catch((err) => {
+			res
+				.status(400)
+				.send({ message: "Opps ! Looks like something is wrong." });
+		});
 });
 module.exports = router;

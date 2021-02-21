@@ -9,4 +9,11 @@ $(document).ready(function () {
 			.siblings()
 			.removeClass("active");
 	});
+
+	$("form").ajaxForm({
+		method: "POST",
+		success: function (response) {
+			alert("The server says: " + response.message);
+		},
+	});
 });
