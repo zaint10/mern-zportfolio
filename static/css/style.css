@@ -93,16 +93,16 @@ nav .link-wrap {
   width: 100%;
 }
 
-nav .link-wrap div:first-child {
+nav .link-wrap a:first-child {
   padding: 25px 20px 12px 20px;
 }
 
-nav .link-wrap div:hover {
+nav .link-wrap a:hover {
   color: #d70010;
   background-color: transparent;
 }
 
-nav .link-wrap div {
+nav .link-wrap a {
   color: #fff;
   cursor: pointer;
   padding: 12px 20px;
@@ -419,11 +419,11 @@ footer .footnote {
     text-align: left;
   }
 
-  nav .link-wrap div:first-child {
+  nav .link-wrap a:first-child {
     padding: 0;
   }
 
-  nav .link-wrap div {
+  nav .link-wrap a  {
     display: inline;
     font-size: initial;
     margin: 0 20px;
