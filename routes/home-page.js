@@ -10,6 +10,7 @@ USERNAME = "WolvezineX0";
 router.get("/", sessionChecker, async (req, res) => {
     const user = await Controller.UserController.getPopulateProjects(req.session.user._id)
     const categorizedProjects = utilities.getCategorizedProjects(user.projects)
+    delete user.password
     res.render('index.jade', {user: user, projects: categorizedProjects}) 
 
 });
