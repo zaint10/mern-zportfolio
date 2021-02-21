@@ -64,7 +64,7 @@ app.use(cookieParser());
 app.set("view engine", "jade");
 
 app.set("view engine", "hbs");
-app.set('trust proxy', 1)
+// app.set('trust proxy', 1)
 // Define Server
 const server = require("http").Server(app);
 TWO_HOURS = 1000 * 60 * 60 * 2
