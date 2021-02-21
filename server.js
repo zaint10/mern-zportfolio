@@ -98,9 +98,10 @@ app.use("/service/upload", fileUploadApi);
 
 // set morgan to log info about our requests for development use.
 app.use(morgan("dev"));
-
-server.listen(process.env.PORT, () => {
-  console.log('Server started. Listening on POST: ' + process.env.PORT)
+const port = process.env.PORT || 5000;
+server.listen(port, () => {
+  console.log('Server started. Listening on PORT: ' + port)
+  console.log(`http://127.0.0.1:${port}/`)
 });
 
 

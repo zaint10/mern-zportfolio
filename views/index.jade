@@ -14,10 +14,12 @@ block body
 
 block js
     script(src="js/canvas.js")
-    script(src="js/portfolio.js" type="module")     
+    script(src="js/portfolio.js" type="module")   
     script(type='text/javascript').
         const user = !{JSON.stringify(user)};
         const projects = !{JSON.stringify(projects)};
+        
+    script(src="js/shortcuts.js")
         
 
 
