@@ -12,6 +12,20 @@ const findProjectById = (projectId) => {
 	});
 };
 
+const findProjectByIds = (projects) => {
+	return new Promise((resolve, reject) => {
+		models.Projects.find({
+			_id: { $in: projects.map((project) => project._id) },
+		})
+			.then((docProjects) => {
+				resolve(docProjects);
+			})
+			.catch((err) => {
+				reject(err);
+			});
+	});
+};
+
 const createProjects = (project) => {
 	return new Promise((resolve, reject) => {
 		models.Projects.create(project)
@@ -83,11 +97,16 @@ const updateProjectCategory = (projectids, category_name = "Others") => {
 			{
 				name: category_name,
 			},
-			(err, category) => {
+			async (err, category) => {
 				if (err) {
 					reject(err);
 				} else {
-					if (category) {
+					let isDefault = false;
+					if (!category) {
+						category = await models.ProjectCatagories.create({ name: category_name });
+						isDefault = true;
+					}
+					if (category || isDefault) {
 						models.Projects.updateOne(
 							{
 								_id: { $in: projectids },
@@ -96,7 +115,7 @@ const updateProjectCategory = (projectids, category_name = "Others") => {
 								category: category,
 							}
 						)
-							.then((docProject) => {
+							.then(() => {
 								resolve();
 							})
 							.catch((err) => {
@@ -123,9 +142,9 @@ const createCategory = async (def = "Others") => {
 	});
 };
 
-
 module.exports = {
 	findProjectById,
+	findProjectByIds,
 	createProjects,
 	updateProjects,
 	deleteProject,

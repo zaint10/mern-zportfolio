@@ -283,7 +283,7 @@ section:nth-of-type(2) .box {
 /*Contact ME */
 section:nth-of-type(4) {
   background: #101820FF;
-  color: #fff;
+  /* color: #fff; */
   padding-top: 175px;
 }
 
@@ -307,7 +307,7 @@ section:nth-of-type(4) input[type=text], section:nth-of-type(4) input[type=email
   background: #EFEFE8FF;
   border: 0;
   box-sizing: border-box;
-  color: #fff;
+ 
   display: block;
   font-size: 12pt;
   margin-bottom: 3px;

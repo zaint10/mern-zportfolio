@@ -112,7 +112,7 @@ $(document).ready(function () {
 		},
 	});
 	
-	$('.dropdown button').on('click', function (event) {
+	$(document).on('click', '.dropdown button', function (event) {
 		$(this).next('.dropdown-menu').toggleClass('show')
 		// $(this).toggleClass('show');
 	})

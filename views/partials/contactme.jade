@@ -7,10 +7,10 @@ section#contact
         div.header
             |Contact Me
         div.header-bar
-        form#contact-form.waypoint.animated.pop-in(data-animation='pop-in' data-delay='.5s' style='animation-delay: 0.5s;')
-            input(placeholder='Name' type='text' name='name' required='')
-            input(placeholder='Enter email' type='email' name='email' required='')
-            textarea(placeholder='Your Message' type='text' name='message')
+        form#contact-form.waypoint.animated.pop-in(action='/api/v1/contact-me' method='post' data-animation='pop-in' data-delay='.5s' style='animation-delay: 0.5s;')
+            input(placeholder='Name' type='text' name='from[name]' required='')
+            input(placeholder='Enter email' type='email' name='from[email]' required='')
+            textarea(placeholder='Your Message' type='text' name='from[msg]')
             #success
                 div
                 | Your message was sent successfully. Thanks!

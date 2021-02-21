@@ -1,6 +1,7 @@
 const Controller = require("../controllers");
 const utilities = require("../utilities");
 const express = require("express");
+const sendEmail = require("../services/send-email");
 let { Logger } = require("../utilities");
 
 const router = express.Router();
@@ -44,16 +45,23 @@ router.post("/projects", async (req, res) => {
 	if (projects) {
 		createdProjects = await Controller.ProjectController.createProjects(
 			projects
-		);
+		).catch((err) => {
+			Logger.error(err);
+			return res.status(400).send({ message: "Somethjing Went Wrong." });
+		});
+
 		Logger.info(`Projects are created. Assigning projects to user: ${userId}`);
 		await Controller.UserController.addProjects(userId, createdProjects)
-			.then(() => {
+			.then(async () => {
 				Logger.info(`Projects are assigned.`);
+				createdProjects = await Controller.ProjectController.findProjectByIds(
+					createdProjects
+				);
 				res.status(200).send({ projects: createdProjects });
 			})
 			.catch((err) => {
 				Logger.error(err);
-				res.status(400).send({ projects: createdProjects });
+				res.status(400).send({ message: "Something went wrong." });
 			});
 	}
 });
@@ -101,7 +109,7 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 		if (docProject.image) {
 			// Store old key before updating imagemetadata. This will be used to delete object from bucket.
 			const oldKey = docProject.image.key;
-			newImage = await Controller.ImageMetadataController.updateImageMetadata(
+			newImage = Controller.ImageMetadataController.updateImageMetadata(
 				docProject.image._id,
 				filename,
 				filetype,
@@ -109,17 +117,17 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 				fileurl
 			);
 		} else {
-			newImage = await Controller.ImageMetadataController.createImageMetaData(
+			newImage = Controller.ImageMetadataController.createImageMetaData(
 				filename,
 				filetype,
 				key,
 				fileurl
 			);
 		}
-		return newImage
+		return await newImage
 			.then((docImage) => {
 				Logger.info(`Image metadata is updated: ${docImage._id}`);
-				docProject.image = newImage;
+				docProject.image = docImage;
 				docProject.save();
 				Logger.info("Image is added in project.");
 				return res.status(200).send({
@@ -130,7 +138,7 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 				});
 			})
 			.catch((err) => {
-				Logger.info(err);
+				Logger.error(err);
 			});
 	} else {
 		res.status(404).send({
@@ -141,7 +149,7 @@ router.post("/create-project-image/:projectId", async (req, res) => {
 });
 
 router.put("/project-category/:projectid", async (req, res) => {
-	Logger.info('Assigning a category to project.')
+	Logger.info("Assigning a category to project.");
 	const { projectid } = req.params;
 	const { category } = req.body;
 	if (projectid && category) {
@@ -155,5 +163,18 @@ router.put("/project-category/:projectid", async (req, res) => {
 	}
 
 	return res.status(403);
+});
+
+router.post("/contact-me", async (req, res) => {
+	const fromObj = req.body.from;
+	sendEmail(fromObj)
+		.then(() => {
+			res.status(200).send({ message: "Email is sent." });
+		})
+		.catch((err) => {
+			res
+				.status(400)
+				.send({ message: "Opps ! Looks like something is wrong." });
+		});
 });
 module.exports = router;
