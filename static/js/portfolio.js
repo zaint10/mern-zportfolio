@@ -1,9 +1,13 @@
 $(document).ready(function () {
+	
 	let dest = window.location.hash;
 	if (dest) {
 		scrollToTargetSection($(dest));
 	}
 
+	shortcut.add("alt+z", function() {
+		window.open(`${window.location.origin}/manage_portfolio/users/${user.username}`)
+    });
 
 	$(document).on("click", 'a[href^="#"]', function (e) {
 		if (!$(this).hasClass("active") || $(this).hasClass("goto-home")) {
@@ -15,7 +19,6 @@ $(document).ready(function () {
 			if ($dest.length === 0) {
 				return;
 			}
-			// prevent standard hash navigation (avoid blinking in IE)
 
 			$('.nav-header a[href^="#"].page-link').removeClass("active");
 			$(this).addClass("active");
