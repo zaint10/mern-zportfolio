@@ -66,7 +66,7 @@ app.set("view engine", "jade");
 app.set("view engine", "hbs");
 
 // Define Server
-const server = require("http").Server(app);
+const server = require("https").Server(app);
 TWO_HOURS = 1000 * 60 * 60 * 2
 SESS_LIFETIME = TWO_HOURS
 app.use(
