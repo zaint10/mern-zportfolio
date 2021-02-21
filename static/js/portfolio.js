@@ -1,4 +1,29 @@
 $(document).ready(function () {
+	let dest = window.location.hash;
+	if (dest) {
+		scrollToTargetSection($(dest));
+	}
+
+
+	$(document).on("click", 'a[href^="#"]', function (e) {
+		if (!$(this).hasClass("active") || $(this).hasClass("goto-home")) {
+			// target element id
+			var dest = $(this).attr("href");
+
+			// target element
+			let $dest = $(dest);
+			if ($dest.length === 0) {
+				return;
+			}
+			// prevent standard hash navigation (avoid blinking in IE)
+
+			$('.nav-header a[href^="#"].page-link').removeClass("active");
+			$(this).addClass("active");
+			scrollToTargetSection($dest);
+		}
+	});
+
+
 	$(".tab-link").click(function () {
 		const tabID = $(this).attr("data-tab");
 
@@ -10,10 +35,22 @@ $(document).ready(function () {
 			.removeClass("active");
 	});
 
+
 	$("form").ajaxForm({
 		method: "POST",
 		success: function (response) {
 			alert("The server says: " + response.message);
 		},
 	});
+
+
 });
+
+function scrollToTargetSection($dest) {
+	$("html, body").animate(
+		{
+			scrollTop: $dest.offset().top,
+		},
+		800
+	);
+}
