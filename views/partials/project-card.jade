@@ -1,12 +1,42 @@
-.project-card
-    div.project-card-image-wrapper
-        img.card-image(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
-        .card-body-wrapper
-            label 
-                |Project Name
-            .project-desc
-                p
-                    | Description...
-            .card-footer-row
-                button
-                    |More
+// All Projects
+.tab-content.active(id="tab-0")
+    .project-card-wrapper
+        each projectsArr, category in projects
+            each project in projectsArr
+                .project-card.item
+                    div.project-card-image-wrapper
+                        if(project.image)
+                            img.card-image(src="#{project.image.url}")
+                        else
+                            img.card-image(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
+                        .card-body-wrapper
+                            label 
+                                |#{project.name}
+                            .project-desc
+                                p
+                                    |#{project.desc}
+                            .card-footer-row
+                                button
+                                    |View More
+
+// Categorized Wise Projects in separate tabs.
+-var index = 1
+each projectsArr, category in projects
+    .tab-content(id="tab-#{index++}")
+        .project-card-wrapper
+            each project in projectsArr
+                .project-card.item
+                    div.project-card-image-wrapper
+                        if(project.image)
+                            img.card-image(src="#{project.image.url}")
+                        else
+                            img.card-image(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
+                        .card-body-wrapper
+                            label 
+                                |#{project.name}
+                            .project-desc
+                                p
+                                    |#{project.desc}
+                            .card-footer-row
+                                button
+                                    |View More

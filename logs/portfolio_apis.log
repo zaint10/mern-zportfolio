@@ -1,0 +1,158 @@
+Sat, 20 Feb 2021 18:48:30 GMT | INFO | portfolio_apis.log | Updating User's potfolio details. | 
+Sat, 20 Feb 2021 18:49:02 GMT | INFO | portfolio_apis.log | Details are updated. user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:00:51 GMT | INFO | portfolio_apis.log | Updating User's potfolio details. | 
+Sat, 20 Feb 2021 19:01:19 GMT | INFO | portfolio_apis.log | User's projects details are updated. | 
+Sat, 20 Feb 2021 19:01:33 GMT | INFO | portfolio_apis.log | Details are updated. user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:27:05 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:27:50 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:27:51 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:27:51 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:37:08 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603162b6d3c4ba19149bc81c | 
+Sat, 20 Feb 2021 19:38:14 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:38:15 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:38:15 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:38:44 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60316526597a7b303089a104 | 
+Sat, 20 Feb 2021 19:38:44 GMT | ERROR | portfolio_apis.log | Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client | 
+Sat, 20 Feb 2021 19:40:52 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:40:53 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:40:53 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:41:01 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603165c4daab800970e4c614 | 
+Sat, 20 Feb 2021 19:41:01 GMT | INFO | portfolio_apis.log | Project Ref: 603165c4daab800970e4c614 deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:45:25 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:45:26 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:45:26 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:45:36 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603166d5ccf1f13750f2ff2b | 
+Sat, 20 Feb 2021 19:45:36 GMT | INFO | portfolio_apis.log | Project Ref: 603166d5ccf1f13750f2ff2b deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:47:33 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:47:34 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:47:34 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:47:42 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60316755eab3c7106c80cf2b | 
+Sat, 20 Feb 2021 19:47:42 GMT | INFO | portfolio_apis.log | Project Ref: 60316755eab3c7106c80cf2b deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:49:58 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 19:49:59 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 19:49:59 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 19:50:09 GMT | INFO | portfolio_apis.log | Project is deleted: id: 603167e62f9c3805c89758c7 | 
+Sat, 20 Feb 2021 19:50:10 GMT | INFO | portfolio_apis.log | Project Ref: 603167e62f9c3805c89758c7 deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 20:33:55 GMT | INFO | portfolio_apis.log | Updating User's potfolio details. | 
+Sat, 20 Feb 2021 20:33:55 GMT | INFO | portfolio_apis.log | User's projects details are updated. | 
+Sat, 20 Feb 2021 20:33:56 GMT | INFO | portfolio_apis.log | Details are updated. user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 20:38:30 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:40:23 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:40:24 GMT | INFO | portfolio_apis.log | Image metadata is updated: 603173b79944e60a9497f068 | 
+Sat, 20 Feb 2021 20:40:24 GMT | INFO | portfolio_apis.log | Image is added in project. | 
+Sat, 20 Feb 2021 20:42:20 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:42:21 GMT | INFO | portfolio_apis.log | TypeError: Cannot read property '_id' of null | 
+Sat, 20 Feb 2021 20:44:44 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:45:30 GMT | ERROR | portfolio_apis.log | TypeError: Cannot read property '_id' of null | 
+Sat, 20 Feb 2021 20:46:40 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:48:03 GMT | ERROR | portfolio_apis.log | TypeError: Cannot read property '_id' of null | 
+Sat, 20 Feb 2021 20:48:40 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:50:24 GMT | ERROR | portfolio_apis.log | TypeError: Cannot read property '_id' of null | 
+Sat, 20 Feb 2021 20:50:46 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:51:00 GMT | INFO | portfolio_apis.log | Image metadata is updated: 6031762da19df235504806fa | 
+Sat, 20 Feb 2021 20:51:04 GMT | INFO | portfolio_apis.log | Image is added in project. | 
+Sat, 20 Feb 2021 20:53:13 GMT | INFO | portfolio_apis.log | Adding project image. | 
+Sat, 20 Feb 2021 20:53:27 GMT | INFO | portfolio_apis.log | Image metadata is updated: 6031762da19df235504806fa | 
+Sat, 20 Feb 2021 20:53:28 GMT | INFO | portfolio_apis.log | Image is added in project. | 
+Sat, 20 Feb 2021 20:59:45 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 20:59:48 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 20:59:48 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:00:55 GMT | INFO | portfolio_apis.log | Deleting a project | 
+Sat, 20 Feb 2021 21:00:55 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60317841a19df235504806fe | 
+Sat, 20 Feb 2021 21:00:56 GMT | INFO | portfolio_apis.log | Project ref deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:00:58 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:00:59 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:00:59 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:03:59 GMT | INFO | portfolio_apis.log | Deleting a project | 
+Sat, 20 Feb 2021 21:03:59 GMT | INFO | portfolio_apis.log | Project is deleted: id: 6031788aa19df23550480701 | 
+Sat, 20 Feb 2021 21:03:59 GMT | INFO | portfolio_apis.log | Project ref deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:04:02 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:04:03 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:04:03 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:10:18 GMT | INFO | portfolio_apis.log | Deleting a project | 
+Sat, 20 Feb 2021 21:10:18 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60317942a19df23550480704 | 
+Sat, 20 Feb 2021 21:10:18 GMT | INFO | portfolio_apis.log | Project ref deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:10:23 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:12:21 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:12:21 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:14:56 GMT | INFO | portfolio_apis.log | Deleting a project | 
+Sat, 20 Feb 2021 21:14:56 GMT | INFO | portfolio_apis.log | Project is deleted: id: 60317acb1025c336a0ae9c5b | 
+Sat, 20 Feb 2021 21:14:56 GMT | INFO | portfolio_apis.log | Project ref deleted from User: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:15:02 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:19:54 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:30:39 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:30:40 GMT | INFO | portfolio_apis.log | MongoError: E11000 duplicate key error collection: 5f99daa548b74d1d40b40321_PortfolioDB.projects index: category.name_1 dup key: { category.name: "Others" } | 
+Sat, 20 Feb 2021 21:30:40 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:30:40 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 21:32:44 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:33:39 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:33:40 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:33:40 GMT | ERROR | portfolio_apis.log | CastError: Cast to ObjectId failed for value "{ _id: { '$in': [ undefined ] } }" at path "_id" for model "projects" | 
+Sat, 20 Feb 2021 21:35:59 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:36:06 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:37:28 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:37:29 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:37:29 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:37:29 GMT | ERROR | portfolio_apis.log | CastError: Cast to ObjectId failed for value "{ _id: { '$in': [ undefined ] } }" at path "_id" for model "projects" | 
+Sat, 20 Feb 2021 21:38:09 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:39:32 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:41:18 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:41:24 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:43:34 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:43:35 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:43:35 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:43:35 GMT | ERROR | portfolio_apis.log | CastError: Cast to ObjectId failed for value "{ _id: { '$in': [ 60318286dbd42f367813cee2 ] } }" at path "_id" for model "projects" | 
+Sat, 20 Feb 2021 21:46:31 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:46:40 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:46:44 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:46:52 GMT | ERROR | portfolio_apis.log | CastError: Cast to ObjectId failed for value "{ _id: { '$in': [ 60318337ec932f33a06da68f ] } }" at path "_id" for model "projects" | 
+Sat, 20 Feb 2021 21:49:22 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:49:22 GMT | ERROR | portfolio_apis.log | MongooseError: document must have an _id before saving | 
+Sat, 20 Feb 2021 21:49:24 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:49:26 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 21:51:50 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:51:55 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:51:59 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 21:53:16 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:53:38 GMT | ERROR | portfolio_apis.log | MongoError: E11000 duplicate key error collection: 5f99daa548b74d1d40b40321_PortfolioDB.projects index: category.name_1 dup key: { category.name: "Others" } | 
+Sat, 20 Feb 2021 21:53:41 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:53:48 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 21:54:38 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:54:40 GMT | ERROR | portfolio_apis.log | MongoError: E11000 duplicate key error collection: 5f99daa548b74d1d40b40321_PortfolioDB.projects index: category.name_1 dup key: { category.name: "Others" } | 
+Sat, 20 Feb 2021 21:54:43 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:54:47 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 21:56:29 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 21:56:31 GMT | ERROR | portfolio_apis.log | MongoError: E11000 duplicate key error collection: 5f99daa548b74d1d40b40321_PortfolioDB.projects index: category.name_1 dup key: { category.name: "Others" } | 
+Sat, 20 Feb 2021 21:58:09 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 21:58:09 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 22:05:13 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:05:13 GMT | ERROR | portfolio_apis.log | ValidationError: category: Tried to set nested object field `category` to primitive value `Others` and strict mode is set to throw. | 
+Sat, 20 Feb 2021 22:05:13 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 22:05:13 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 22:07:27 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:07:33 GMT | ERROR | portfolio_apis.log | ValidationError: category: Tried to set nested object field `category` to primitive value `Others` and strict mode is set to throw. | 
+Sat, 20 Feb 2021 22:07:37 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 22:07:37 GMT | ERROR | portfolio_apis.log | TypeError: projects.forEach is not a function | 
+Sat, 20 Feb 2021 22:10:25 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:12:49 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:13:17 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:13:28 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:14:50 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:17:50 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:18:30 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:23:28 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:23:29 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 22:23:29 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 22:26:02 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:26:24 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 22:26:26 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 22:27:06 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:29:39 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 22:29:41 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 22:29:41 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 23:08:46 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 23:08:47 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 23:08:47 GMT | INFO | portfolio_apis.log | Projects are assigned. | 
+Sat, 20 Feb 2021 23:10:47 GMT | INFO | portfolio_apis.log | Creating new projects. | 
+Sat, 20 Feb 2021 23:10:48 GMT | INFO | portfolio_apis.log | Projects are created. Assigning projects to user: 5fac284c5cc89d49acc53732 | 
+Sat, 20 Feb 2021 23:10:48 GMT | INFO | portfolio_apis.log | Projects are assigned. | 

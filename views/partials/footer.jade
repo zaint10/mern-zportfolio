@@ -1,0 +1,22 @@
+footer
+  i.fa.fa-angle-double-up(dest='home')
+  .icon-wrap.flex.flex-row
+    a(href='#{user.link_linkedin}')
+      #icon-2.flex.icon
+        i.fa.fa-linkedin
+    a(href='#{user.link_github}')
+      #icon-4.flex.icon
+        i.fa.fa-github
+    a(href='https://leetcode.com/zat938/')
+      #icon-4.flex.icon
+        i.fa.fa-code
+   
+  .info-box
+    .footnote.text-capitalize
+      | #{user.fname} #{user.lname} 
+      span.highlight &copy; Copyright 
+        span#copyright-year 
+
+    script(type='text/javascript').
+        document.getElementById('copyright-year').innerHTML = new Date().getFullYear()
+        
