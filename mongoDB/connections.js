@@ -1,6 +1,10 @@
-const { response } = require("express");
 const mongoose = require("mongoose");
 
+let {Logger} = require("../utilities");
+
+Logger = new Logger();
+Logger.setLogName('mongoDB');
+Logger.init();
 
 class DBConnection{
     constructor(DB_CONNECTION_STRING){
@@ -10,13 +14,13 @@ class DBConnection{
     connect() {
       
         mongoose
-          .connect(this.DB_CONNECTION_STRING, { useNewUrlParser: true,  useUnifiedTopology: true })
+          .connect(this.DB_CONNECTION_STRING, { useNewUrlParser: true,  useUnifiedTopology: true, useCreateIndex: true })
           .then((response) => {
-            console.log("Mongo DB is connected"); 
+            Logger.info("Mongo DB is connected"); 
           })
           .catch((err) => {
-            console.log("MongoDB Connection Error");
-            console.log(err)
+            Logger.error("MongoDB Connection Error");
+            Logger.error(err)
           });
 
           
