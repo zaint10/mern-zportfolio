@@ -100,7 +100,7 @@ const createUserRoles = (userid, roles) => {
 					if(err){
 						reject(err)
 					}
-					docUser.update(
+					docUser.updateMany(
 						{ $push: { roles: {$each: docRoles} } },
 						{ new: true, useFindAndModify: false },
 					).then(result => {

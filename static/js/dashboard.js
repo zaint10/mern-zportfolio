@@ -5,12 +5,8 @@ import * as UTILS from './utils.js'
 
 $(document).ready(function () {
 	$(".bootstrap-tagsinput input").attr("name", "");
-
-	console.log(user);
-	console.log(categories);
 	addProjects(user.projects);
 	
-
 	document.body.addEventListener("animationend", function (event) {
 		if (event.animationName === "disapear") {
 			removeElemnet(event.target);

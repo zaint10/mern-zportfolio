@@ -58,15 +58,15 @@ const config = require(path.join(root, "config"));
 const Database = require("./mongoDB");
 const publicDirectoryPath = path.join(__dirname, `${config.static}`);
 
-// Connect to DB
-const MongoDB = new Database.mongoDB(process.env.DB_CONNECTION_URI).connect();
 
 // Defining Main Router
 const express = require("express");
 const app = express();
+
 app.locals.split = function (string) {
 	return string.split(",");
 };
+
 // Set app Views And Static Folder
 app.set("views", `${path.join(root, config.views)}`);
 app.use(express.static(publicDirectoryPath));
@@ -87,6 +87,7 @@ app.set("view engine", "hbs");
 const server = require("http").Server(app);
 TWO_HOURS = 1000 * 60 * 60 * 2;
 SESS_LIFETIME = TWO_HOURS;
+
 app.use(
 	session({
 		name: "zid",
@@ -100,16 +101,7 @@ app.use(
 		},
 	})
 );
-// app.get('*',function(req,res,next){
-//   if(req.protocol == 'https'){
-//     res.redirect(`https://${req.header('host')}${req.url}`)
-//   }else{
-//     next()
-//   }
-// })
-var sslRedirect = require("heroku-ssl-redirect");
-// app.use(sslRedirect());
-// Set routes
+
 app.use("/", home_page);
 
 app.use("/account", accountApis);
@@ -121,9 +113,14 @@ app.use("/service/upload", fileUploadApi);
 app.use(morgan("dev"));
 const port = process.env.PORT || 5000;
 server.listen(port, (err) => {
-	console.log("Server started. Listening on PORT: " + port);
-	console.log(`http://127.0.0.1:${port}/`);
-	
+  // Connect to DB
+  new Database.mongoDB(process.env.DB_CONNECTION_URI).connect();
+  
+  if(process.env.NODE_ENV !== "production"){
+    console.log("Server started. Listening on PORT: " + port);
+    console.log(`http://127.0.0.1:${port}/`);
+  }
+
 });
 
 
