@@ -198,7 +198,7 @@ section:nth-of-type(2) .boxes-wrap, .boxes-wrap {
 
 /*Project*/
 section:nth-of-type(3)  .project-card {
-  height: 430px;
+  height: auto;
   
 }
 
