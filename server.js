@@ -118,6 +118,7 @@ app.use("/service/upload", fileUploadApi);
 // set morgan to log info about our requests for development use.
 app.use(morgan("dev"));
 const port = process.env.PORT || 5000;
+
 server.listen(port, (err) => {
   // Connect to DB
   new Database.mongoDB(process.env.DB_CONNECTION_URI).connect();
