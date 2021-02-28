@@ -40,8 +40,12 @@ hbs.registerHelper({
 	},
 	json: function (obj) {
 		return JSON.stringify(obj);
-	},
+  },
+  truncate: function(string, words){
+    return string.split(0, words)
+  }
 });
+
 
 require("dotenv").config();
 
@@ -83,6 +87,8 @@ app.use(cookieParser());
 app.set("view engine", "jade");
 
 app.set("view engine", "hbs");
+
+
 // Define Server
 const server = require("http").Server(app);
 TWO_HOURS = 1000 * 60 * 60 * 2;

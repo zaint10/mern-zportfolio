@@ -1,42 +1,55 @@
 // All Projects
+-var index = -1
 .tab-content.active(id="tab-0")
     .project-card-wrapper
         each projectsArr, category in projects
-            each project in projectsArr
-                .project-card.item
-                    div.project-card-image-wrapper
-                        if(project.image)
-                            img.card-image(src="#{project.image.url}")
+            each project, idx in projectsArr
+                -index++
+                .project-card.item(data-Idx="#{idx}" data-Category="#{category}")
+                    
+                    if(project.image)
+                            img.card-image.mb-1(src="#{project.image.url}")
                         else
-                            img.card-image(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
+                            img.card-image.mb-1(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
                         .card-body-wrapper
-                            label 
-                                |#{project.name}
+                            
+                            label.project-name
+                                |#{project.name} 
                             .project-desc
-                                p
-                                    |#{project.desc}
+                                input(type="checkbox" class="see-more-state" hidden id="project0-#{index}")
+                                p.see-more-wrap
+                                    |#{project.desc.substr(0, 230)}
+                                    if(project.desc.length > 230)  
+                                        span.see-more-target
+                                            |#{project.desc.substr(230)} 
+                                        label(for="project0-#{index}" class="see-more-trigger")
                             .card-footer-row
-                                button
+                                button.button(data-toggle="modal" data-target="#project-details")
                                     |View More
+                        
 
 // Categorized Wise Projects in separate tabs.
 -var index = 1
 each projectsArr, category in projects
     .tab-content(id="tab-#{index++}")
         .project-card-wrapper
-            each project in projectsArr
-                .project-card.item
-                    div.project-card-image-wrapper
-                        if(project.image)
+            each project, idx in projectsArr
+                 .project-card.item(data-Idx="#{idx}" data-Category="#{category}")
+                    if(project.image)
                             img.card-image(src="#{project.image.url}")
                         else
                             img.card-image(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
                         .card-body-wrapper
-                            label 
+                            label.project-name
                                 |#{project.name}
                             .project-desc
-                                p
-                                    |#{project.desc}
+                                input(type="checkbox" class="see-more-state" hidden id="project0-#{index}")
+                                p.see-more-wrap
+                                    |#{project.desc.substr(0, 230)}
+                                    if(project.desc.length > 230)  
+                                        span.see-more-target
+                                            |#{project.desc.substr(230)} 
+                                        label(for="project0-#{index}" class="see-more-trigger")
                             .card-footer-row
-                                button
+                                button.button(data-toggle="modal" data-target="#project-details")
                                     |View More
