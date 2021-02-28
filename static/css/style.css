@@ -81,6 +81,10 @@ i {
   transform: translate(0, 0);
 }
 
+nav .link-wrap.visible {
+  height: 220px;
+}
+
 /* Nav Bar End */
 
 .canvas {

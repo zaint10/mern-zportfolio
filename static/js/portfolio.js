@@ -10,8 +10,13 @@ $(document).ready(function () {
 		);
 	});
 
+	$(".mdi-menu").click(function () {
+		$(".link-wrap").toggleClass("visible");
+	});
+
 	$(document).on("click", 'a[href^="#"]', function (e) {
 		if (!$(this).hasClass("active") || $(this).hasClass("goto-home")) {
+			$('.link-wrap').removeClass('visible');
 			// target element id
 			var dest = $(this).attr("href");
 
@@ -23,6 +28,9 @@ $(document).ready(function () {
 
 			$('.nav-header a[href^="#"].page-link').removeClass("active");
 			$(this).addClass("active");
+			if($(this).hasClass("goto-home")){
+				$('.nav-header a[href^="#home"].page-link').addClass("active");
+			}
 			scrollToTargetSection($dest);
 		}
 	});
@@ -61,7 +69,7 @@ $(document).ready(function () {
 		modal.find(".modal-body .project-desc").empty().text(project.desc);
 
 		modal.find(".modal-body .boxes-wrap .box:not(:first-child)").remove();
-		const techUsedArr = project.tech_used.split(",").filter(tech => tech);
+		const techUsedArr = project.tech_used.split(",").filter((tech) => tech);
 		const $targetDiv = modal.find(".modal-body .boxes-wrap");
 		for (let tech of techUsedArr) {
 			let $boxSelector = modal.find(".modal-body .box.flex:eq(0)").clone();
