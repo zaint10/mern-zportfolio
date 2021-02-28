@@ -36,9 +36,9 @@ each projectsArr, category in projects
             each project, idx in projectsArr
                  .project-card.item(data-Idx="#{idx}" data-Category="#{category}")
                     if(project.image)
-                            img.card-image(src="#{project.image.url}")
+                            img.card-image.mb-1(src="#{project.image.url}")
                         else
-                            img.card-image(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
+                            img.card-image.mb-1(src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg")
                         .card-body-wrapper
                             label.project-name
                                 |#{project.name}
