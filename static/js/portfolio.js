@@ -46,11 +46,14 @@ $(document).ready(function () {
 			.removeClass("active");
 	});
 
-	$("form").ajaxForm({
+	$("form#contact-form").ajaxForm({
 		method: "POST",
 		success: function (response) {
 			alert("The server says: " + response.message);
 		},
+		error: function(resp){
+			alert("The email server is down or something happened");
+		}
 	});
 
 	$("#project-details").on("show.bs.modal", function (event) {
