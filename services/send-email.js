@@ -9,7 +9,7 @@ async function sendEmail(from) {
     host: 'smtp.gmail.com',
     port: 587,
     secure: process.env.PRODUCTION == 'true',
-    requireTLS: true,
+    requireTLS: false,
       
       auth: {
           user: process.env.MY_DUMMY_EMAIL_ADDRESS,
