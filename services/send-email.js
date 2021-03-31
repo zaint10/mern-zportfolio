@@ -7,7 +7,7 @@ async function sendEmail(from) {
   let smtpTransport = await nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: false,
+    secure: process.env.PRODUCTION,
     requireTLS: true,
       
       auth: {
