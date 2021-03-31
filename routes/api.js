@@ -172,6 +172,7 @@ router.post("/contact-me", async (req, res) => {
 			res.status(200).send({ message: "Email is sent." });
 		})
 		.catch((err) => {
+			Logger.error(err);
 			res
 				.status(400)
 				.send({ message: "Opps ! Looks like something is wrong." });
