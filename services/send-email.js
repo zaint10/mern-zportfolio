@@ -4,10 +4,11 @@ const nodemailer = require("nodemailer");
 async function sendEmail(from) {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
+  
   let smtpTransport = await nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: process.env.PRODUCTION,
+    secure: process.env.PRODUCTION == 'true',
     requireTLS: true,
       
       auth: {
