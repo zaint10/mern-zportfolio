@@ -30,12 +30,14 @@ const authenticate = (username, password='') => {
         ).then(docUser => {
             // Authentication based on just username
             if(docUser){
-                response.isAuthenticated = true;
-               
+                
                 // Authentication based on if password also given
                 if(password && !docUser.isValidPassword(password)){
                     response.isAuthenticated = false
                     response.message = 'Username or password maybe incorrect.'
+                }else{
+                    response.message = 'Username and password is correct'
+                    response.isAuthenticated = true;
                 }
             }
             response.user = docUser

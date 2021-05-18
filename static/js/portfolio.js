@@ -45,7 +45,7 @@ $(document).ready(function () {
 			.siblings()
 			.removeClass("active");
 	});
-
+	
 	$("form#contact-form").ajaxForm({
 		method: "POST",
 		success: function (response) {
